@@ -36,7 +36,9 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  overflow-x: clip;               /* clip (where supported) also keeps position: sticky/fixed working */
 }
+html { overflow-x: clip; }
 img { max-width: 100%; display: block; }
 a { color: inherit; }
 button { font: inherit; color: inherit; cursor: pointer; }
@@ -48,7 +50,7 @@ ul, ol { list-style: none; margin: 0; padding: 0; }
 .container { width: min(var(--maxw), 100% - 2 * var(--gutter)); margin-inline: auto; }
 .container-narrow { width: min(720px, 100% - 2 * var(--gutter)); margin-inline: auto; }
 
-.section { padding: clamp(80px, 12vh, 140px) 0; position: relative; }
+.section { padding: clamp(80px, 12vh, 140px) 0; position: relative; overflow-x: clip; }
 .section + .section { border-top: 1px solid var(--line); }
 
 .eyebrow {
@@ -501,26 +503,68 @@ ul, ol { list-style: none; margin: 0; padding: 0; }
   .skills-intro { order: -1; }
 }
 @media (max-width: 720px) {
-  :root { --topbar-h: 112px; }
-  .topbar { grid-template-columns: 1fr auto; grid-template-rows: 60px 44px; row-gap: 0; padding-top: 4px; }
-  .nav {
-    grid-column: 1 / -1; grid-row: 2; justify-self: stretch;
-    overflow-x: auto; scrollbar-width: none; padding: 4px;
+  :root { --topbar-h: 108px; --gutter: 16px; }
+  .section { padding: 72px 0; }
+
+  /* Top bar: two rows. minmax(0, …) stops the nav from stretching the page wider than the screen. */
+  .topbar {
+    grid-template-columns: minmax(0, 1fr) auto; grid-template-rows: 56px 44px;
+    padding-top: 4px; background: rgba(12,14,18,.72);
+    backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
   }
-  .nav { justify-content: space-between; }
-  .nav a { padding: 7px 9px; font-size: 11px; letter-spacing: .06em; flex: none; }
+  .nav {
+    grid-column: 1 / -1; grid-row: 2; min-width: 0;
+    justify-content: space-between; overflow-x: auto; scrollbar-width: none; padding: 3px;
+  }
+  .nav a { padding: 8px 9px; font-size: 11px; letter-spacing: .06em; flex: none; }
+  .hire-btn { height: 40px; padding: 0 16px; }
   .monogram { grid-row: 1; grid-column: 2; width: 40px; height: 40px; }
-  .hero-frame { width: min(72vw, 320px); }
-  .hero::before { width: calc(min(72vw, 320px) + 28px); }
-  .hero-path { left: 0; right: 0; top: calc(var(--topbar-h) + 28px); bottom: auto; justify-items: center; text-align: center; }
-  .award-tabs button { padding: 9px 12px; font-size: .84rem; }
-  .skill-cards { grid-template-columns: 1fr; }
-  .skill-card:nth-child(2) { margin-top: 0; }
-  .about-card { grid-template-columns: 1fr; }
-  .about-side { max-width: 320px; }
+
+  /* Hero */
+  .hero-frame { width: min(76vw, 330px); }
+  .hero::before { width: calc(min(76vw, 330px) + 24px); }
+  .hero-path { left: 0; right: 0; top: calc(var(--topbar-h) + 32px); bottom: auto; justify-items: center; text-align: center; padding: 0 var(--gutter); }
+  .path-pills li { font-size: .86rem; padding: 6px 12px; }
+  .scroll-cue { display: none; }
+
+  /* Work gallery: bigger cards, peeking neighbours clipped by the section */
+  .roll { height: calc(86vw / 2.08 + 40px); }
+  .roll-card { width: 86vw; }
   .roll-arrow { display: none; }
-  .collage { columns: 2; }
-  .chat { left: 16px; bottom: 16px; }
+
+  /* Skills */
+  .logo-grid { grid-template-columns: repeat(5, 1fr); gap: 8px; margin-top: 26px; }
+  .logo-grid li { border-radius: 12px; gap: 6px; }
+  .logo-grid img { width: 28px; height: 28px; }
+  .logo-grid span { font-size: 10.5px; }
+  .skill-cards { grid-template-columns: 1fr; }
+  .skill-card { padding: 22px 20px; }
+  .skill-card:nth-child(2) { margin-top: 0; }
+  .skill-card .top { margin-bottom: 18px; }
+  .skill-card .label { max-width: none; }
+
+  /* About: smaller centred photo, stats full width */
+  .about-card { grid-template-columns: 1fr; gap: 28px; }
+  .about-photo { width: min(62vw, 240px); justify-self: center; }
+  .about-heading { margin-bottom: 16px; }
+  .currently ul { grid-template-columns: 1fr; }
+
+  /* Awards: tabs fill the width */
+  .award-tabs { display: flex; width: 100%; }
+  .award-tabs button { flex: 1; padding: 10px 8px; font-size: .84rem; white-space: normal; line-height: 1.25; }
+  .collage { columns: 2; column-gap: 8px; }
+  .collage button { margin-bottom: 8px; border-radius: 10px; }
+  .award-list li { padding: 16px; }
+
+  /* Contact */
+  .contact-actions .btn { flex: 1; }
+  .contact-cards a { padding: 16px; grid-template-columns: 44px 1fr; gap: 14px; }
+  .contact-cards .ico { width: 44px; height: 44px; }
+  .footer a { padding: 8px 0; }
+
+  /* Chat becomes a bottom sheet */
+  .chat { left: 8px; right: 8px; bottom: 8px; width: auto; height: min(600px, calc(100dvh - 16px)); }
+  .chat-form input { font-size: 16px; }   /* ≥16px stops iOS zooming in on focus */
 }
 
 @media (prefers-reduced-motion: reduce) {
