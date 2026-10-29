@@ -38,6 +38,22 @@ const ICONS = {
 
 let DATA = {};
 
+/* ---------- Theme toggle (works even if content fails to load) ---------- */
+(function setupTheme() {
+  const root = document.documentElement, btn = $('#themeToggle'), meta = $('meta[name="theme-color"]');
+  const apply = theme => {
+    root.dataset.theme = theme;
+    btn.setAttribute('aria-label', theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode');
+    meta.content = theme === 'light' ? '#f5f6f8' : '#0c0e12';
+  };
+  apply(root.dataset.theme === 'light' ? 'light' : 'dark');
+  btn.addEventListener('click', () => {
+    const next = root.dataset.theme === 'light' ? 'dark' : 'light';
+    apply(next);
+    try { localStorage.setItem('theme', next); } catch (e) { /* private mode: still switches, just isn't remembered */ }
+  });
+})();
+
 /* ---------- Boot ---------- */
 (async function init() {
   try {
