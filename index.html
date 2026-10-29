@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Carlvin Jay Sulla · Portfolio</title>
+  <meta name="description" content="Portfolio of Carlvin Jay G. Sulla — 4th-year Computer Science student at BiPSU on the path to Data Analyst and Networking, with Django and Python web projects.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ───────── Top bar ───────── -->
+  <header class="topbar">
+    <button class="btn btn-outline hire-btn" data-open-chat>Hire me</button>
+    <nav class="nav" aria-label="Sections">
+      <a href="#work">Work</a>
+      <a href="#skills">Skills</a>
+      <a href="#about">About</a>
+      <a href="#awards">Awards</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="#home" class="monogram" aria-label="Back to top" data-bind="initials">CJ</a>
+  </header>
+
+  <main>
+    <!-- ───────── 1. Landing ───────── -->
+    <section id="home" class="hero">
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee-track" data-bind="marquee"></div>
+      </div>
+      <figure class="hero-frame">
+        <img data-bind-src="photo" alt="Portrait of Carlvin Jay Sulla">
+      </figure>
+      <div class="hero-path">
+        <p class="mono">On the path to</p>
+        <ul class="path-pills" data-paths></ul>
+        <p class="hero-role mono" data-bind="role"></p>
+      </div>
+      <a href="#work" class="scroll-cue mono">Scroll</a>
+    </section>
+
+    <!-- ───────── 2. Work gallery ───────── -->
+    <section id="work" class="section">
+      <div class="container">
+        <p class="eyebrow">Selected work</p>
+        <h2 class="h2">Work Gallery</h2>
+        <p class="lead">Systems I've built for real people, offices and communities.</p>
+      </div>
+      <div class="roll" tabindex="0" aria-roledescription="carousel" aria-label="Projects">
+        <button class="roll-arrow prev" aria-label="Previous project">&#8592;</button>
+        <div class="roll-stage" id="rollStage"></div>
+        <button class="roll-arrow next" aria-label="Next project">&#8594;</button>
+      </div>
+      <div class="roll-dots" id="rollDots"></div>
+      <article class="project-info container-narrow" id="projectInfo" aria-live="polite"></article>
+    </section>
+
+    <!-- ───────── 3. Technical skills ───────── -->
+    <section id="skills" class="section">
+      <div class="container skills-grid">
+        <div class="skill-cards" id="skillCards"></div>
+        <div class="skills-intro">
+          <p class="eyebrow">My capabilities</p>
+          <h2 class="h2" data-bind="skills.heading"></h2>
+          <p class="lead" data-bind="skills.intro"></p>
+          <ul class="logo-grid" id="logoGrid"></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────── 4. About ───────── -->
+    <section id="about" class="section">
+      <div class="container about">
+        <p class="eyebrow">About me</p>
+        <div class="about-card">
+          <div class="about-side">
+            <img class="about-photo" data-bind-src="photo" alt="Carlvin Jay Sulla">
+            <dl class="stats">
+              <div><dt>Certificates</dt><dd id="statCerts">0</dd></div>
+              <div><dt>Projects</dt><dd id="statProjects">0</dd></div>
+              <div><dt data-bind="year_label"></dt><dd data-bind="year_value"></dd></div>
+            </dl>
+          </div>
+          <div class="about-body">
+            <h2 class="about-name" data-bind="full_name"></h2>
+            <ul class="path-pills" data-paths></ul>
+            <p class="about-heading" data-bind="about_heading"></p>
+            <p class="about-bio" data-bind="bio"></p>
+          </div>
+        </div>
+        <div class="currently">
+          <p class="eyebrow">Currently</p>
+          <ul id="currentlyList"></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────── 5. Awards ───────── -->
+    <section id="awards" class="section">
+      <div class="container">
+        <p class="eyebrow">Recognition</p>
+        <h2 class="h2">Awards &amp; Achievements</h2>
+        <p class="lead">Recognitions and certificates from school, competitions, courses and the community.</p>
+        <div class="award-tabs" role="tablist" aria-label="Award categories">
+          <button role="tab" data-cat="achievements" aria-selected="true">Achievements &amp; Certificates</button>
+          <button role="tab" data-cat="beyond" aria-selected="false">Beyond the code</button>
+        </div>
+        <div class="awards" id="awardsPanel" role="tabpanel">
+          <div class="collage" id="collage"></div>
+          <ol class="award-list" id="awardList"></ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────── 6. Let's work together ───────── -->
+    <section id="contact" class="section contact">
+      <div class="container contact-grid">
+        <div>
+          <p class="eyebrow">Get in touch</p>
+          <h2 class="contact-title" data-bind="contact_heading"></h2>
+          <p class="contact-tagline" data-bind="contact_tagline"></p>
+          <p class="lead" data-bind="contact_text"></p>
+          <div class="contact-actions">
+            <button class="btn btn-solid" data-open-chat>Send a message &#8594;</button>
+            <a class="btn btn-outline" id="resumeBtn" hidden download>Download résumé</a>
+          </div>
+        </div>
+        <ul class="contact-cards" id="contactCards"></ul>
+      </div>
+      <footer class="footer container mono">
+        <span>© <span id="year"></span> <span data-bind="full_name"></span></span>
+        <a href="#home">Back to top &#8593;</a>
+      </footer>
+    </section>
+  </main>
+
+  <!-- ───────── Chatbot ───────── -->
+  <aside class="chat" id="chat" aria-label="Chat with Carlvin's assistant" hidden>
+    <header class="chat-head">
+      <div class="chat-who">
+        <img data-bind-src="photo" alt="">
+        <div>
+          <strong>Ask about Carlvin</strong>
+          <span class="mono"><i class="dot"></i>Assistant · online</span>
+        </div>
+      </div>
+      <button class="icon-btn" id="chatClose" aria-label="Close chat">&#10005;</button>
+    </header>
+    <div class="chat-log" id="chatLog" aria-live="polite"></div>
+    <div class="chat-chips" id="chatChips"></div>
+    <form class="chat-form" id="chatForm">
+      <input id="chatInput" type="text" placeholder="Type a message…" autocomplete="off" aria-label="Message">
+      <button class="btn btn-solid" type="submit" aria-label="Send">&#8593;</button>
+    </form>
+  </aside>
+
+  <!-- ───────── Lightbox ───────── -->
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="icon-btn" aria-label="Close">&#10005;</button>
+    <img alt="">
+    <p class="mono"></p>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

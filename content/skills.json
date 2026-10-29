@@ -1,0 +1,27 @@
+{
+  "heading": "What I Can Do",
+  "intro": "Web development is where I started — building database-driven systems with Python and Django. Data analytics and networking are where I'm heading next.",
+  "languages": [
+    { "name": "Django", "icon": "assets/skills/django.svg" },
+    { "name": "Python", "icon": "assets/skills/python.svg" },
+    { "name": "HTML", "icon": "assets/skills/html.svg" },
+    { "name": "CSS", "icon": "assets/skills/css.svg" },
+    { "name": "Java", "icon": "assets/skills/java.svg" }
+  ],
+  "cards": [
+    {
+      "number": "01",
+      "label": "Data Analytics · Path",
+      "title": "Turning data into decisions",
+      "description": "Currently training through Google's Data Analytics program on Coursera: asking the right questions, cleaning and preparing data, analyzing it, and presenting findings clearly.",
+      "tags": ["Data Cleaning", "Spreadsheets", "SQL", "Data Visualization", "Python"]
+    },
+    {
+      "number": "02",
+      "label": "Networking · Path",
+      "title": "How networks connect",
+      "description": "Certified in Cisco Networking Academy's Networking Basics: how devices communicate, how addresses and routers move data, and how to test and troubleshoot connections.",
+      "tags": ["Network Fundamentals", "Ethernet", "IPv4 & IPv6", "Routing Basics", "Troubleshooting", "Wireless Setup"]
+    }
+  ]
+}

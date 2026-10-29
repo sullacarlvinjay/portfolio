@@ -1,0 +1,85 @@
+{
+  "items": [
+    {
+      "title": "Dean's Lister",
+      "detail": "Recognized for academic excellence at Biliran Province State University.",
+      "date": "",
+      "icon": "cap",
+      "category": "achievements",
+      "certificate": false,
+      "images": ["assets/awards/deans-lister.jpg"]
+    },
+    {
+      "title": "Capstone: SRMS with Eligibility Recommender",
+      "detail": "Built and defended a Scholarship Record Management system with an Eligibility Recommender for Higher Education Institutions.",
+      "date": "",
+      "icon": "trophy",
+      "category": "achievements",
+      "certificate": false,
+      "images": ["assets/awards/capstone-team.jpg", "assets/awards/capstone-defense.jpg"]
+    },
+    {
+      "title": "Networking Basics",
+      "detail": "Cisco Networking Academy — network types, Ethernet, IPv4/IPv6 addressing, routing and troubleshooting.",
+      "date": "May 20, 2026",
+      "icon": "network",
+      "category": "achievements",
+      "certificate": true,
+      "images": ["assets/certificates/cisco-course-completion.jpg", "assets/certificates/cisco-networking-basics.jpg"]
+    },
+    {
+      "title": "Integrated OS – Be More Digi-TALINO",
+      "detail": "Webinar on digital literacy: productivity apps, digital communication, smart research, and data safety & security.",
+      "date": "September 5, 2025",
+      "icon": "cert",
+      "category": "achievements",
+      "certificate": true,
+      "images": ["assets/certificates/integrated-os-webinar.jpg"]
+    },
+    {
+      "title": "1st Runner-up, Best Musicality & Best Performance",
+      "detail": "Environmental Awareness Video Competition — “Pagpakabana ha Kinaiyahan”, BiPSU STCS.",
+      "date": "May 2, 2025",
+      "icon": "medal",
+      "category": "beyond",
+      "certificate": false,
+      "images": ["assets/awards/video-competition-team.jpg", "assets/awards/video-competition-certificates.jpg"]
+    },
+    {
+      "title": "Community Extension Project",
+      "detail": "Presented and turned over our output to Barangay Sto. Niño, Naval, Biliran.",
+      "date": "",
+      "icon": "people",
+      "category": "beyond",
+      "certificate": false,
+      "images": ["assets/awards/community-extension.jpg"]
+    },
+    {
+      "title": "Introduction to AI Literacy and Responsible Use",
+      "detail": "Micro-credential course — CHED ACHIEVE with Mapúa University and Arizona State University.",
+      "date": "September 14, 2026",
+      "icon": "ai",
+      "category": "beyond",
+      "certificate": true,
+      "images": ["assets/certificates/ai-literacy.jpg"]
+    },
+    {
+      "title": "Thesis Preparation with Trending Tools & Industry Practices",
+      "detail": "Seminar-workshop at Biliran Province State University – Student Center.",
+      "date": "October 6–7, 2025",
+      "icon": "cert",
+      "category": "beyond",
+      "certificate": true,
+      "images": ["assets/certificates/thesis-prep-workshop.jpg"]
+    },
+    {
+      "title": "Unplug & Unwind: Redefining Digital Connection and Safe Spaces",
+      "detail": "1-day seminar — BiPSU School of Technology and Computer Studies, Computer Science Society.",
+      "date": "February 9, 2024",
+      "icon": "cert",
+      "category": "beyond",
+      "certificate": true,
+      "images": ["assets/certificates/unplug-unwind-seminar.jpg"]
+    }
+  ]
+}

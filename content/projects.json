@@ -1,0 +1,20 @@
+{
+  "items": [
+    {
+      "title": "MushGuard",
+      "tagline": "Mushroom identification for Biliranons",
+      "image": "assets/projects/mushguard.jpg",
+      "description": "A mushroom identification and mapping system made exclusively for Biliranons. Scan a mushroom to find out what species it is, whether it's edible, and how long it stays safe to eat.",
+      "tags": ["Django", "Python", "Image Recognition", "Mapping"],
+      "link": ""
+    },
+    {
+      "title": "BiPSU SRMS",
+      "tagline": "Scholarship Record Management System",
+      "image": "assets/projects/bipsu-srms.jpg",
+      "description": "A scholarship portal built exclusively for Biliran Province State University's SDISS office. It archives scholarship records and recommends eligible students for the university's exclusive scholarships.",
+      "tags": ["Django", "Python", "Record Archiving", "Eligibility Recommender"],
+      "link": ""
+    }
+  ]
+}

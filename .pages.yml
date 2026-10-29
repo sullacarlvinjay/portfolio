@@ -1,0 +1,124 @@
+# Pages CMS configuration — https://pagescms.org/docs
+# Log in at https://app.pagescms.org with GitHub, open this repo,
+# and these sections appear as editable forms. Saving commits to the repo.
+
+media:
+  input: assets
+  output: assets
+
+content:
+  # ───────────── Profile, About & Contact ─────────────
+  - name: profile
+    label: Profile, About & Contact
+    type: file
+    path: content/profile.json
+    format: json
+    fields:
+      - { name: first_name, label: First name (shown big on the landing page), type: string }
+      - { name: last_name, label: Last name, type: string }
+      - { name: full_name, label: Full name, type: string }
+      - { name: role, label: Role / tagline, type: string }
+      - { name: paths, label: Career paths (highlighted pills), type: string, list: true }
+      - { name: photo, label: Profile photo, type: image }
+      - { name: about_heading, label: About — headline, type: string }
+      - { name: bio, label: About — bio, type: text }
+      - { name: year_label, label: Third stat label (e.g. "BSCS Year"), type: string }
+      - { name: year_value, label: Third stat value (e.g. "4th"), type: string }
+      - name: currently
+        label: Currently
+        type: object
+        list: true
+        fields:
+          - { name: label, label: Label (e.g. Taking, Studying, Exploring), type: string }
+          - { name: detail, label: Detail, type: string }
+          - name: icon
+            label: Icon
+            type: select
+            options:
+              values: [data, school, network, seminar, learn, build, ai, cert]
+      - { name: contact_heading, label: Contact — big heading, type: string }
+      - { name: contact_tagline, label: Contact — tagline, type: string }
+      - { name: contact_text, label: Contact — paragraph, type: text }
+      - { name: email, label: Email, type: string }
+      - { name: github, label: GitHub URL, type: string }
+      - { name: linkedin, label: LinkedIn URL (leave empty to hide), type: string }
+      - { name: facebook, label: Facebook URL (leave empty to hide), type: string }
+      - { name: resume, label: Résumé PDF (optional), type: file }
+
+  # ───────────── Work Gallery ─────────────
+  - name: projects
+    label: Work Gallery
+    type: file
+    path: content/projects.json
+    format: json
+    fields:
+      - name: items
+        label: Projects
+        type: object
+        list: true
+        fields:
+          - { name: title, label: Title, type: string }
+          - { name: tagline, label: Tagline, type: string }
+          - { name: image, label: Screenshot, type: image }
+          - { name: description, label: Description, type: text }
+          - { name: tags, label: Tags, type: string, list: true }
+          - { name: link, label: Link (optional), type: string }
+
+  # ───────────── Technical Skills ─────────────
+  - name: skills
+    label: Technical Skills
+    type: file
+    path: content/skills.json
+    format: json
+    fields:
+      - { name: heading, label: Heading, type: string }
+      - { name: intro, label: Intro, type: text }
+      - name: languages
+        label: Languages & frameworks (logo grid)
+        type: object
+        list: true
+        fields:
+          - { name: name, label: Name, type: string }
+          - { name: icon, label: Logo, type: image }
+      - name: cards
+        label: Big cards (additional skills)
+        type: object
+        list: true
+        fields:
+          - { name: number, label: Number (e.g. 01), type: string }
+          - { name: label, label: Small label, type: string }
+          - { name: title, label: Title, type: string }
+          - { name: description, label: Description, type: text }
+          - { name: tags, label: Tags, type: string, list: true }
+
+  # ───────────── Awards, Certificates & Beyond the Code ─────────────
+  - name: awards
+    label: Awards, Certificates & Beyond the Code
+    type: file
+    path: content/awards.json
+    format: json
+    fields:
+      - name: items
+        label: Entries
+        type: object
+        list: true
+        fields:
+          - { name: title, label: Title, type: string }
+          - { name: detail, label: Detail, type: text }
+          - { name: date, label: Date (free text, optional), type: string }
+          - name: category
+            label: Tab
+            type: select
+            options:
+              values: [achievements, beyond]
+          - { name: certificate, label: Is a certificate? (counted on About), type: boolean }
+          - name: icon
+            label: Icon
+            type: select
+            options:
+              values: [cap, trophy, medal, people, cert, network, ai, data, school]
+          - name: images
+            label: Photos / certificate images
+            type: image
+            options:
+              multiple: true
