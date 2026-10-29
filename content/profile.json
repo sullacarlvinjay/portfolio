@@ -3,23 +3,37 @@
   "last_name": "Sulla",
   "full_name": "Carlvin Jay G. Sulla",
   "role": "4th-year Computer Science student · BiPSU",
-  "paths": ["Data Analyst", "Networking"],
+  "paths": [
+    "Data Analyst",
+    "Networking"
+  ],
   "photo": "assets/profile/carlvin.png",
   "about_heading": "Data-minded. Network-curious. Builder at heart.",
   "bio": "I'm a 4th-year Computer Science student at Biliran Province State University, on the path to becoming a Data Analyst with a growing focus on networking. I'm currently a scholar in Google's Data Analytics program on Coursera, and I've completed Cisco Networking Academy's Networking Basics. Along the way I've built web systems that solve real local problems — MushGuard, an AI-powered mushroom identifier for Biliranons, and BiPSU SRMS, a scholarship records and eligibility platform for my university.",
   "year_label": "BSCS Year",
   "year_value": "4th",
   "currently": [
-    { "label": "Taking", "detail": "Google Data Analytics on Coursera — scholarship program", "icon": "data" },
-    { "label": "Studying", "detail": "4th-year BS Computer Science, Biliran Province State University", "icon": "school" },
-    { "label": "Exploring", "detail": "Networking with Cisco Networking Academy", "icon": "network" }
+    {
+      "label": "Taking",
+      "detail": "Google Data Analytics on Coursera — scholarship program",
+      "icon": "data"
+    },
+    {
+      "label": "Studying",
+      "detail": "4th-year BS Computer Science, Biliran Province State University",
+      "icon": "school"
+    },
+    {
+      "label": "Exploring",
+      "detail": "Networking with Cisco Networking Academy",
+      "icon": "network"
+    }
   ],
   "contact_heading": "Let's work together",
   "contact_tagline": "Looking for a data-minded teammate?",
   "contact_text": "I'm open to data analyst and networking internships or entry-level roles, plus web development projects — especially work that turns raw information into better decisions.",
   "email": "sullacarlvinjay@gmail.com",
-  "github": "https://github.com/your-username",
+  "github": "https://github.com/sullacarlvinjay",
   "linkedin": "https://www.linkedin.com/in/your-profile",
-  "facebook": "https://www.facebook.com/your-profile",
-  "resume": ""
+  "facebook": "https://www.facebook.com/carlvinjay.gloriasulla/"
 }
