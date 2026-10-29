@@ -1,0 +1,57 @@
+we will be creating a portfolio chat lets start from defining the content
+
+
+note: i will be sending here the file or images needed for the development, also for each page i will give you inspirations
+
+1st : landing page , it should consist the following 
+my photo in the center with a rectangle frame upward facing and behind it theres my name with big fonts like its running from left to right, and for the navigation buttons just add it on whats  the content of each page place it on the top center then for the top left corner put Hire me button and after clicking that button it will pop up a chatbot from the left bottom side.
+
+2nd page work gallery it should consist:
+swipable pictures of my different projects, its like a camera roll but in cards pictures then it should contain brief information of the projects below
+
+3rd technical skills, it should consist: 
+- what i can do text then below is logos of different programming laguage i can do then for the left side to big cards put contents for just additional technical skills 
+
+
+4th about  me page, it should consist:
+my photo below that number of certificates and projects 
+
+the below the currently, what i currently have for example currently taking seminars like that
+
+
+5th is awards and achievements:
+layout the images i will give you perfectly for the achievement and also for the achievements beside in text
+
+
+last slide "lets work together" :
+it should consist , emails, github account, send a message button that will also open up a chatbot 
+
+
+the chatbot we will be utilizing gemini free tier api, but before that lets focus on developing first the frontend
+
+i already uploaded some of the requirements by folder and heres for the text informations:
+
+
+informations about work gallery
+for mushguard it is exclusive for biliranon its features are to scan mushroom and know which mushroom it is and if it is edible and the time span of its edibility. 
+for bipsu srms it is exclusive for biliran province state uiversity specifically SDISS office and then its features are for record archiving and eligility recommender for exclusive scholarships only also.
+
+
+technical skills 
+django framework
+python
+html
+css 
+java
+
+
+for the 4th slide just information first we can just edit it after 
+
+for the email. sullacarlvinjay@gmail.com
+for github just paste anything temporary and same for others 
+
+
+
+
+
+
