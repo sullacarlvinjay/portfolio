@@ -37,6 +37,3 @@ assets/originals/   full-resolution originals of every photo (backup, not loaded
 .pages.yml          Pages CMS form definitions
 ```
 
-## Chatbot
-
-`askAssistant()` in `js/main.js` currently answers from the content files. It will later call a Gemini proxy (a Cloudflare Worker) so the API key never reaches the browser.
