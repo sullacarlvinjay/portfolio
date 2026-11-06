@@ -251,6 +251,33 @@ ul, ol { list-style: none; margin: 0; padding: 0; }
 }
 @keyframes rise { from { transform: translateY(40px); opacity: 0; } }
 
+
+@media (min-width: 721px) {
+  .hero {
+    grid-template-columns: auto minmax(0, 1fr);
+    align-content: center; justify-content: start;
+    column-gap: clamp(36px, 4vw, 64px);
+    padding: calc(var(--topbar-h) + 20px) var(--gutter) 40px;
+  }
+  .hero::before { display: none; }
+  .hero .hero-path {
+    position: static; align-self: end; justify-self: start;
+    gap: 14px; padding-bottom: 6px;
+  }
+  .hero .hero-path > p:first-child { font-size: 14px; }
+  .hero .hero-path .path-pills { gap: 12px; }
+  .hero .hero-path .path-pills li { font-size: clamp(1.15rem, 1.6vw, 1.5rem); padding: 11px 22px; }
+  .hero .hero-role { font-size: 14px; margin-top: 4px; }
+  .hero-frame {
+    width: min(clamp(300px, 30vw, 440px), calc((100svh - var(--topbar-h) - 100px) * .75));
+    margin-left: 14px;                       /* room for the offset outline */
+    border-radius: 22px;
+    outline: 1px solid var(--line-2);
+    outline-offset: 14px;
+    box-shadow: 0 30px 80px var(--shadow-strong), 0 0 0 1px var(--frame-edge);
+  }
+}
+
 .hero-path {
   position: absolute; z-index: 3; left: var(--gutter); bottom: 28px;
   display: grid; gap: 10px; justify-items: start;
