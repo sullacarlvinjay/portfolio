@@ -25,6 +25,18 @@
         "Eligibility Recommender"
       ],
       "link": "https://backend-vb5d.onrender.com/"
+    },
+    {
+      "title": "Ticketnode",
+      "tagline": "Event ticketing system",
+      "image": "assets/Screenshot 2026-11-07 205559-1.png",
+      "description": "An event ticketing system designed for disseminating tickets and creating events exclusively for biliran province. Viewers can now search for events and buy their tickets online, then organizers can create their events and open the sales to the public. ",
+      "tags": [
+        "django",
+        "Python",
+        "Parallel computing",
+        "Distributed computing"
+      ]
     }
   ]
 }
