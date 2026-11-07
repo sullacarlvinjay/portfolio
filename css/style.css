@@ -424,7 +424,13 @@ ul, ol { list-style: none; margin: 0; padding: 0; }
 .about-name { font-size: clamp(1.4rem, 2.6vw, 1.8rem); letter-spacing: -.01em; text-transform: uppercase; margin: 0 0 12px; }
 .about-body .path-pills { margin-bottom: 22px; }
 .about-heading { font-size: clamp(2rem, 4.4vw, 3.2rem); font-weight: 800; line-height: 1.08; letter-spacing: -.03em; margin: 0 0 22px; }
-.about-bio { color: var(--muted); font-size: 1.05rem; margin: 0; max-width: 62ch; }
+.about-bio {
+  color: var(--muted); font-size: 1.05rem; margin: 0; max-width: 62ch;
+  text-align: justify; text-justify: inter-word;
+}
+@media (max-width: 720px) {
+  .about-bio { text-align: left; }   /* justify leaves wide word gaps on a narrow column */
+}
 
 .currently { margin-top: clamp(40px, 7vh, 72px); padding-top: 28px; border-top: 1px solid var(--line); }
 .currently ul { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
