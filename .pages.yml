@@ -43,7 +43,7 @@ content:
       - { name: github, label: GitHub URL, type: string }
       - { name: linkedin, label: LinkedIn URL (leave empty to hide), type: string }
       - { name: facebook, label: Facebook URL (leave empty to hide), type: string }
-      - { name: resume, label: Résumé PDF (optional), type: file }
+      - { name: resume, label: Resume PDF (optional), type: file }
 
   # ───────────── Work Gallery ─────────────
   - name: projects
