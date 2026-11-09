@@ -43,8 +43,8 @@ content:
       - { name: github, label: GitHub URL, type: string }
       - { name: linkedin, label: LinkedIn URL (leave empty to hide), type: string }
       - { name: facebook, label: Facebook URL (leave empty to hide), type: string }
-      - { name: resume, label: Résumé PDF (shown in the "View resume" pop-up), type: file }
-      - { name: resume_image, label: Résumé preview image (shown on phones that can't display PDFs), type: image }
+      - { name: resume, label: Resume PDF (shown in the "View resume" pop-up), type: file }
+      - { name: resume_image, label: Resume preview image (shown on phones that can't display PDFs), type: image }
 
   # ───────────── Work Gallery ─────────────
   - name: projects
