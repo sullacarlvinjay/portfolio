@@ -1,8 +1,3 @@
-/* ==========================================================
-   Portfolio — renders every section from /content/*.json
-   (those files are what Pages CMS edits).
-   ========================================================== */
-
 const CONTENT = {
   profile: 'content/profile.json',
   projects: 'content/projects.json',
@@ -296,7 +291,42 @@ function renderContact() {
       <span><small>${it.label}</small><strong>${esc(it.value)}</strong></span>
       <span class="n">${String(i + 1).padStart(2, '0')}</span>
     </a></li>`).join('');
-  if (p.resume) { const r = $('#resumeBtn'); r.href = p.resume; r.hidden = false; }
+  if (p.resume || p.resume_image) setupResumeViewer(p);
+}
+
+/* ---------- Résumé viewer: PDF where the browser can show it inline, image elsewhere ---------- */
+function setupResumeViewer(p) {
+  const btn = $('#resumeBtn'), viewer = $('#resumeViewer'), body = $('#resumeBody');
+  // Most phones (Android Chrome, in-app browsers) can't render a PDF inside the page.
+  const canShowPdf = p.resume && navigator.pdfViewerEnabled !== false && !matchMedia('(pointer: coarse)').matches;
+  btn.hidden = false;
+  $('#resumeTitle').textContent = `${p.full_name} — Résumé`;
+
+  const open = () => {
+    if (!body.firstChild) {
+      if (canShowPdf || !p.resume_image) {
+        body.className = 'resume-body';
+        // #toolbar=0 hides the download/print bar in Chrome & Edge's built-in viewer
+        body.innerHTML = `<iframe src="${esc(p.resume)}#toolbar=0&navpanes=0&view=FitH" title="Résumé of ${esc(p.full_name)}"></iframe>`;
+      } else {
+        body.className = 'resume-body image';
+        body.innerHTML = `<img src="${esc(p.resume_image)}" alt="Résumé of ${esc(p.full_name)}">`;
+      }
+    }
+    viewer.hidden = false;
+    document.body.classList.add('modal-open');
+    $('#resumeClose').focus();
+  };
+  const close = () => {
+    viewer.hidden = true;
+    document.body.classList.remove('modal-open');
+    btn.focus();
+  };
+
+  btn.addEventListener('click', open);
+  $('#resumeClose').addEventListener('click', close);
+  viewer.addEventListener('click', e => { if (e.target === viewer) close(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && !viewer.hidden) close(); });
 }
 
 /* ---------- Chatbot (frontend only for now) ---------- */
