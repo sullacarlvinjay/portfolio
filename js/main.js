@@ -300,7 +300,7 @@ function setupResumeViewer(p) {
   // Most phones (Android Chrome, in-app browsers) can't render a PDF inside the page.
   const canShowPdf = p.resume && navigator.pdfViewerEnabled !== false && !matchMedia('(pointer: coarse)').matches;
   btn.hidden = false;
-  $('#resumeTitle').textContent = `${p.full_name} — Résumé`;
+  $('#resumeTitle').textContent = `${p.full_name} — Resume`;
 
   const open = () => {
     if (!body.firstChild) {
