@@ -379,8 +379,6 @@ function setupChat() {
 
 /**
  * Returns the bot's reply as HTML.
- * TODO: replace the body with a call to the Gemini proxy (Cloudflare Worker)
- * once the back-end step is ready. Everything else in the chat stays the same.
  */
 async function askAssistant(text) {
   await new Promise(r => setTimeout(r, 600 + Math.random() * 500));

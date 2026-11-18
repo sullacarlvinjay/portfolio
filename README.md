@@ -72,7 +72,7 @@ index.html          all six sections
 css/style.css       design (colour tokens at the top)
 js/main.js          renders content, carousel, collage, chatbot
 content/*.json      the editable content
-assets/             images, certificates, projects, résumé (PDF, DOCX, preview)
+assets/             images, certificates, projects, resume (PDF, DOCX, preview)
 .pages.yml          Pages CMS form definitions
 ```
 
