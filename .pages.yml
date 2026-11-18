@@ -1,6 +1,4 @@
 # Pages CMS configuration — https://pagescms.org/docs
-# Log in at https://app.pagescms.org with GitHub, open this repo,
-# and these sections appear as editable forms. Saving commits to the repo.
 
 media:
   input: assets
