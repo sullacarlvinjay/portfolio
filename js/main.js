@@ -409,7 +409,7 @@ async function askAssistant(text) {
     return esc(p.bio);
   if (/\b(hi|hello|hey|good (morning|afternoon|evening))\b/.test(q))
     return `Hello! What would you like to know about ${esc(p.first_name)}?`;
-  return `I'm still being connected to my AI brain, so I can only answer about projects, skills, awards and contact for now. For anything else, email ${mail}.`;
+  return `I can answer questions about Carlvin's projects, skills, awards, certificates and how to get in touch. For anything else, email ${mail}.`;
 }
 
 /* ---------- Top bar, active nav, reveal, lightbox ---------- */

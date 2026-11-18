@@ -91,6 +91,11 @@ ul, ol { list-style: none; margin: 0; padding: 0; }
 :focus-visible { outline: 2px solid var(--accent-fg); outline-offset: 3px; border-radius: 6px; }
 
 .mono { font-family: var(--mono); }
+/* Read by screen readers and search engines, but not drawn on screen */
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
 .container { width: min(var(--maxw), 100% - 2 * var(--gutter)); margin-inline: auto; }
 .container-narrow { width: min(720px, 100% - 2 * var(--gutter)); margin-inline: auto; }
 
